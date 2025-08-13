@@ -1,0 +1,43 @@
+.button {
+	position: relative;
+	height: 50px;
+	width: 120px;
+	background: #ff5945;
+	color: white;
+	border-radius: 40px;
+	border: none;
+	font-size: 16px;
+	overflow: hidden;
+	cursor: pointer;
+	transform: translate(-40px);
+	transition: 0.5s;
+	letter-spacing: 1px;
+
+	&__text {
+		position: relative;
+		z-index: 1;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 0;
+		height: 100%;
+		background: blue;
+		transition: 0.5s ease-out;
+		color: black;
+	}
+
+	&:hover::before {
+		width: 100%;
+	}
+
+	&:hover {
+		background: rgb(252, 45, 45);
+		box-shadow: blue 0px 0px 0px 1px;
+		letter-spacing: 2px;
+		transform: translate(-40px) scale(1.05);
+	}
+}

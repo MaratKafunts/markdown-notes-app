@@ -1,0 +1,126 @@
+.note {
+	width: 100%;
+	max-width: 500px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 20px;
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.5s ease, transform 0.5s ease;
+
+	&--fadeout {
+		opacity: 0;
+		transform: translateY(20px);
+		transition: opacity 0.5s ease, transform 0.5s ease;
+	}
+
+	&--visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	&__title {
+		font-size: 24px;
+		word-break: break-all;
+		max-width: 200px;
+	}
+
+	&__cross {
+		margin-left: 40px;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__checkbox {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 2px solid rgb(179, 179, 179);
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		margin-right: 50px;
+		background: none;
+		position: relative;
+		overflow: hidden;
+		transition: border-color 0.4s ease;
+
+		&::before {
+			content: "";
+			position: absolute;
+			background: #ff5945;
+			border-radius: 50%;
+			width: 0;
+			height: 0;
+			transition: width 0.3s ease 0.3s, height 0.3s ease 0.3s;
+		}
+
+		& span::before,
+		& span::after {
+			content: "";
+			position: absolute;
+			background: white;
+			z-index: 1000;
+			transition: top 0.4s ease, right 0.4s ease, transform 0.4s ease;
+		}
+
+		& span::before {
+			top: 100px;
+			right: 15px;
+			width: 2px;
+			height: 9px;
+			transform: rotate(130deg);
+		}
+
+		& span::after {
+			top: -100px;
+			right: 8px;
+			width: 2px;
+			height: 15px;
+			transform: rotate(39deg);
+		}
+
+		&:hover {
+			border-color: #ff5945;
+
+			&::before {
+				width: 35px;
+				height: 35px;
+				transition: width 0.4s ease, height 0.4s ease;
+			}
+
+			span::before {
+				top: 13px;
+				right: 15px;
+			}
+
+			span::after {
+				top: 7px;
+				right: 8px;
+			}
+		}
+
+		&-active {
+			border-color: #ff5945;
+
+			&::before {
+				width: 35px;
+				height: 35px;
+				transition: none;
+			}
+
+			span::before {
+				top: 13px;
+				right: 15px;
+			}
+
+			span::after {
+				top: 7px;
+				right: 8px;
+			}
+		}
+	}
+}

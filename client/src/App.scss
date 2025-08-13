@@ -1,0 +1,20 @@
+.app {
+	border: 1px solid black;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	background: white;
+	border-radius: 20px;
+	max-width: 600px;
+	padding: 40px;
+	box-sizing: border-box;
+	height: 100%;
+
+	max-height: 400px;
+	transition: max-height 0.5s ease;
+}
+
+.notesList-wrapper {
+	overflow: scroll;
+}

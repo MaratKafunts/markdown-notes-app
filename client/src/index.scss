@@ -1,0 +1,33 @@
+* {
+	font-family: "Oswald", sans-serif;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	margin: 0;
+	background: linear-gradient(-45deg, #1e90ff, #4d072d, #02395e, #ff8c00);
+	background-size: 400% 400%;
+	animation: gradientFlow 15s ease infinite;
+}
+
+@keyframes gradientFlow {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+#root {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
